@@ -1,16 +1,28 @@
 public class FibonacciSequence {
     public static void main(String[] args) {
-        int a = 0;
-        int b = 1;
+        // Начальные два числа последовательности Фибоначчи
+        int a = 0; // Первое число Фибоначчи
+        int b = 1; // Второе число Фибоначчи
 
-        System.out.println(a);
-        System.out.println(b);
+        // Создаём переменную 'next' один раз до цикла, чтобы использовать её повторно
+        int next;
 
-        for (int i = 0; i < 6; i++) {
-            a = a + b;
-            System.out.println(a);
-            b = b + a;
-            System.out.println(b);
+        // Печатаем первые два числа последовательности
+        System.out.println(a); // Вывод: 0
+        System.out.println(b); // Вывод: 1
+
+        // Начинаем цикл, который будет работать 8 раз (для вывода 8 следующих чисел)
+        for (int i = 0; i < 8; i++) {
+            // Находим следующее число в последовательности как сумму двух предыдущих
+            next = a + b;
+
+            // Печатаем следующее число
+            System.out.println(next);
+
+            // Обновляем значения: теперь 'a' становится предыдущим 'b',
+            // а 'b' становится новым числом 'next'
+            a = b;
+            b = next;
         }
     }
 }
